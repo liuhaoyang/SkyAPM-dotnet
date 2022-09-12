@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Grpc.Net.Client;
 
 namespace SkyApm.Sample.Backend.Services
 {
@@ -15,7 +16,7 @@ namespace SkyApm.Sample.Backend.Services
         public GreeterGrpcService(ClientDiagnosticInterceptor interceptor)
         {
             var target = "localhost:12345";
-            var channel = new Channel(target, ChannelCredentials.Insecure);
+            var channel = GrpcChannel.ForAddress(target);
             var invoker = channel.Intercept(interceptor);
             _client = new Greeter.GreeterClient(invoker).WithHost(target);
         }

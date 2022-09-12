@@ -23,5 +23,6 @@
     <ItemGroup>
         <ProjectReference Include="..\..\..\src\SkyApm.Agent.GeneralHost\SkyApm.Agent.GeneralHost.csproj"/>
         <ProjectReference Include="..\SkyApm.Sample.GrpcProto\SkyApm.Sample.GrpcProto.csproj"/>
+        <PackageReference Include="Grpc.AspNetCore" Version="2.47.0.0" />
     </ItemGroup>
 </Project>
