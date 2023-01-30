@@ -23,7 +23,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build Protocol
-      run: dotnet build src/SkyApm.Transport.Grpc.Protocol --no-restore
+      run: dotnet build src/SkyApm.Transport.Grpc.Protocol --no-restore --framework net6.0
     - name: Build
       run: dotnet build --no-restore
     - name: Test
